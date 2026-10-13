@@ -1,0 +1,204 @@
+/* 1. Скидання базових стилів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Зовнішній фон сторінки */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #798eb4;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 3. Головна картка лендингу */
+.card-wrapper {
+  width: 1000px;
+  max-width: 100%;
+  height: 600px;
+  background: radial-gradient(circle at center, #232930 0%, #16191d 100%);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* 4. Навігація (Header) */
+.header {
+  height: 80px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  color: #a0a6b1;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* 5. Головний екран (Hero) */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Опускаємо текст із кнопкою донизу */
+  position: relative;
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+/* Велика фонова назва DRONE */
+.big-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 155px;
+  font-weight: 900;
+  letter-spacing: 14px;
+  color: rgba(255, 255, 255, 0.05);
+  user-select: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Блок позиціонування дрона */
+.drone-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* Сама картинка дрона з компенсацією прозорих полів */
+.drone-image {
+  width: 680px; /* Збільшений розмір */
+  height: auto;
+  display: block;
+  /* Зсув праворуч і вниз, оскільки дрон у вихідному файлі притиснутий до лівого верхнього кута */
+  transform: translate(16%, 15%);
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.7));
+}
+
+/* Текстова інформація та кнопка */
+.hero-info {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  font-size: 11px;
+  color: #8c939e;
+  max-width: 400px;
+  line-height: 1.4;
+  margin-bottom: 22px;
+}
+
+/* Кнопка "BUY NOW" */
+.buy-btn {
+  background-color: #fbe6e8;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 34px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.buy-btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.04);
+}
+
+/* 6. Бічна панель праворуч */
+.side-control {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.side-text {
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #656b77;
+  font-weight: 600;
+}
+
+.side-indicator {
+  width: 1px;
+  height: 40px;
+  background-color: #3b414c;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-indicator .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
